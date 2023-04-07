@@ -7,32 +7,32 @@
 #include <stdio.h>
 #include <math.h>
 
-// Function to perform addition
+
 float add(float a, float b) {
     return a + b;
 }
 
-// Function to perform subtraction
+
 float subtract(float a, float b) {
     return a - b;
 }
 
-// Function to perform multiplication
+
 float multiply(float a, float b) {
     return a * b;
 }
 
-// Function to perform division
+
 float divide(float a, float b) {
     return a / b;
 }
 
-// Function to find square root
+
 float squareRoot(float num) {
     return sqrt(num);
 }
 
-// Function to find power of a number
+
 float power(float base, int exp) {
     float result = 1;
     for (int i = 1; i <= exp; i++) {
@@ -41,7 +41,7 @@ float power(float base, int exp) {
     return result;
 }
 
-// Main function to get user input and perform operations
+
 int main() {
     int choice;
     float num1, num2, result;
