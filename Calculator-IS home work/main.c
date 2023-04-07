@@ -40,12 +40,23 @@ float power(float base, int exp) {
     }
     return result;
 }
+float average(int count) {
+    float sum = 0, num;
+    printf("Enter %d numbers to calculate the average:\n", count);
+    for (int i = 1; i <= count; i++) {
+        printf("Enter number %d: ", i);
+        scanf("%f", &num);
+        sum += num;
+    }
+    return sum / count;
+}
 
 
 int main() {
-    int choice;
+    char choice;
     float num1, num2, result;
     printf("Select an operation to perform:\n");
+    printf("a. Average\n");
     printf("1. Addition\n");
     printf("2. Subtraction\n");
     printf("3. Multiplication\n");
@@ -53,42 +64,50 @@ int main() {
     printf("5. Square root\n");
     printf("6. Power\n");
     printf("Enter your choice: ");
-    scanf("%d", &choice);
+    scanf("%c", &choice);
 
     switch (choice) {
-        case 1:
+       
+        case 'a':
+            printf("Enter the number of elements: ");
+            int count;
+            scanf("%d", &count);
+            result = average(count);
+            printf("Result = %.2f\n", result);
+            break;
+        case '1':
             printf("Enter two numbers to add: ");
             scanf("%f %f", &num1, &num2);
             result = add(num1, num2);
             printf("Result = %.2f\n", result);
             break;
-        case 2:
+        case '2':
             printf("Enter two numbers to subtract: ");
             scanf("%f %f", &num1, &num2);
             result = subtract(num1, num2);
             printf("Result = %.2f\n", result);
             break;
-        case 3:
+        case '3':
             printf("Enter two numbers to multiply: ");
             scanf("%f %f", &num1, &num2);
             result = multiply(num1, num2);
             printf("Result = %.2f\n", result);
             break;
-        case 4:
+        case '4':
             printf("Enter two numbers to divide: ");
             scanf("%f %f", &num1, &num2);
             result = divide(num1, num2);
             printf("Result = %.2f\n", result);
             break;
-        case 5:
+        case '5':
             printf("Enter a number to find its square root: ");
             scanf("%f", &num1);
             result = squareRoot(num1);
             printf("Result = %.2f\n", result);
             break;
-        case 6:
+        case '6':
             printf("Enter a number and its power: ");
-            scanf("%f %d", &num1, &choice);
+            scanf("%f %c", &num1, &choice);
             result = power(num1, choice);
             printf("Result = %.2f\n", result);
             break;
